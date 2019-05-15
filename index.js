@@ -1,18 +1,19 @@
 const express = require('express')
 app = express()
-
+const cors = require('cors');
 const parser = require('body-parser')
 
 const CharacterController = require('./controllers/characters')
 
 app.use(parser.urlencoded({extended: true}))    
 app.use(parser.json())  
+app.use(cors());
 
 app.get('/', (req, res) => {
-	res.redirect('/characters/')
+	res.redirect('/hp/')
 })
 
-app.use('/characters/', CharacterController)
+app.use('/hp/', CharacterController)
 
 
 
@@ -22,4 +23,4 @@ app.use('/characters/', CharacterController)
 //     console.log(`✅ PORT: ${app.get("port")} 🌟`)
 //   })
 
-app.listen(4000, () => console.log('They see me rollin...on port 4000...'))
+app.listen(3000, () => console.log('They see me rollin...on port 3000...'))

@@ -6,7 +6,9 @@ const CharacterSchema = new mongoose.Schema({
 	patronus: String,
 	school: String,
 	alias: String,
-	animagus: String
+	animagus: String,
+	role: String,
+	species: String
 });
 
 let Character = mongoose.model('Character', CharacterSchema);
