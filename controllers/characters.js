@@ -7,8 +7,7 @@ const Character = require('../db/models/characters')
 router.get("/", (req, res) => {
     Character.find({}).then(allcharacters => res.json(allcharacters))
   })
-
-
+  
 //Create a villain
 router.post("/", (req, res) => {
 
